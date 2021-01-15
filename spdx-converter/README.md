@@ -40,6 +40,8 @@ A python wrapper that can convert SPDX 2.1 KeyValue files (.tag) to the format e
 
     mkdir input
 
+    cp sbom.tag input/sbom.tag
+
     docker build -t spdx_to_dbom ./ -f ./spdx_to_dbom/Dockerfile
 
     docker run -e "GATEWAY=$GATEWAY" -e "REPO=$REPO" -e "CHANNEL=$CHANNEL" -e "FILE=$FILE" -e "ASSET=$ASSET" -e "ID=$ID" -v "$(pwd)"/input:/input spdx_to_dbom
@@ -57,10 +59,10 @@ A python wrapper that can convert SPDX 2.1 KeyValue files (.tag) to the format e
 
 ### Development
 
-You will need Python 3.7+ to run this utility as it utilises dataclasses.
+You will need Python 3.7+ to run this utility as it utilities dataclasses.
 
  - Create a virtualenv: `python3 -m venv venv`
- - Activate the virtualenv using the approprate activate file in the `venv/Scripts` folder
+ - Activate the virtualenv using the appropriate activate file in the `venv/Scripts` folder
  - Install requirements: `pip install -r requirements.txt`
 
 ## DBoM To SPDX Converter
@@ -77,9 +79,9 @@ A python wrapper that can read a DBoM and convert it to a SPDX 2.1 KeyValue file
       -r REPO, --repo REPO  The repository ID on which the channel you want to use
                             exists
       -c CHANNEL, --channel CHANNEL
-                            The channel ID on which you want to retreive the BoM
+                            The channel ID on which you want to retrieve the BoM
       -a ASSET, --asset ASSET
-                            The asset ID on which you want to retreive the BoM
+                            The asset ID on which you want to retrieve the BoM
       -f FILE, --file FILE  The SPDX KV Tag that has to be created
 
 ### Docker Usage
@@ -96,14 +98,14 @@ A python wrapper that can read a DBoM and convert it to a SPDX 2.1 KeyValue file
       REPO  The repository ID on which the channel you want to use
                             exists
       CHANNEL
-                            The channel ID on which you want to retreive the BoM
+                            The channel ID on which you want to retrieve the BoM
       ASSET
-                            The asset ID on which you want to retreive the BoM
+                            The asset ID on which you want to retrieve the BoM
       FILE                  The SPDX KV Tag that has to be created
 
 ## Getting Help
 
-If you have any queries on spdx converter ustil, feel free to reach us on any of our [communication channels](https://github.com/DBOMproject/community/blob/master/COMMUNICATION.md) 
+If you have any queries on spdx converter util, feel free to reach us on any of our [communication channels](https://github.com/DBOMproject/community/blob/master/COMMUNICATION.md) 
 
 If you have questions, concerns, bug reports, etc, please file an issue in this repository's [issue tracker](https://github.com/DBOMproject/tools/issues).
 

@@ -19,7 +19,7 @@ This repo contains various tools for interacting with DBoM
 | [spdx-converter](https://github.com/DBOMproject/tools/tree/master/spdx-converter) | Contains a utility for creating dbom assets from spdx documents and another utility for reading them back into spdx format. |
 ## Getting Help
 
-If you have any queries on spdx converter ustil, feel free to reach us on any of our [communication channels](https://github.com/DBOMproject/community/blob/master/COMMUNICATION.md) 
+If you have any queries on the dbom tools, feel free to reach us on any of our [communication channels](https://github.com/DBOMproject/community/blob/master/COMMUNICATION.md) 
 
 If you have questions, concerns, bug reports, etc, please file an issue in this repository's [issue tracker](https://github.com/DBOMproject/tools/issues).
 
