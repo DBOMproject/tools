@@ -8,5 +8,6 @@ RUN echo $REPO
 RUN echo $CHANNEL 
 RUN echo $FILE
 RUN echo $ASSET
+RUN echo $ID
 
-CMD python3 dbom_to_spdx.py -g $GATEWAY -r $REPO -c $CHANNEL -f $FILE -a $ASSET
+CMD if [[ -z "$ID" ]] ; then python3 dbom_to_spdx.py -g $GATEWAY -r $REPO -c $CHANNEL -f $FILE -a $ASSET ; else python3 dbom_to_spdx.py -g $GATEWAY -r $REPO -c $CHANNEL -f $FILE -a $ASSET -i $ID ; fi

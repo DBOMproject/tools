@@ -64,11 +64,13 @@ parser.add_argument('-a', '--asset', type=str,
                     help='The asset ID on which you want to retreive the BoM', required=True)
 parser.add_argument('-f', '--file', type=str,
                     help='The SPDX KV Tag that has to be created', required=True)
+parser.add_argument('-i', '--idextra', type=str,
+                    help='String to append to the id. For testing purposes')
 
 args = parser.parse_args()
 
 
-def retrieve_asset():
+def retrieve_asset(asset_id: str):
     """
     Send the asset payload with the provided asset_id to the gateway
     :param asset_id: A string with assetID
@@ -79,7 +81,7 @@ def retrieve_asset():
     if args.idextra:
         asset_id = f"{asset_id}-{args.idextra}"
     print(f"Retrieve asset {args.asset} on channel {args.channel} on repo {args.repo}")
-    return  api.retreive_asset(args.repo, args.channel, args.asset)
+    return  api.retreive_asset(args.repo, args.channel, asset_id)
 
 def parse_creator_string(creator):
     """
@@ -319,7 +321,7 @@ if __name__ == '__main__':
     p.build()
     file = args.file
     print("Retrieving BoM from gateway")
-    asset = retrieve_asset()
+    asset = retrieve_asset(args.asset)
     while asset is None:
         pass
     sbom = create_sbom(asset)

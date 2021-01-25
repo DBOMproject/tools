@@ -54,7 +54,7 @@ A python wrapper that can convert SPDX 2.1 KeyValue files (.tag) to the format e
       CHANNEL
                             The channel ID on which you want to commit the BoM
       FILE                  The SPDX KV Tag that has to be sent
-      IDEXTRA
+      ID
                             String to append to the id. For testing purposes
 
 ### Development
@@ -83,6 +83,8 @@ A python wrapper that can read a DBoM and convert it to a SPDX 2.1 KeyValue file
       -a ASSET, --asset ASSET
                             The asset ID on which you want to retrieve the BoM
       -f FILE, --file FILE  The SPDX KV Tag that has to be created
+      -i IDEXTRA, --idextra IDEXTRA
+                            String to append to the id. For testing purposes
 
 ### Docker Usage
 
@@ -102,6 +104,8 @@ A python wrapper that can read a DBoM and convert it to a SPDX 2.1 KeyValue file
       ASSET
                             The asset ID on which you want to retrieve the BoM
       FILE                  The SPDX KV Tag that has to be created
+      ID
+                            String to append to the id. For testing purposes
 
 ## Getting Help
 
